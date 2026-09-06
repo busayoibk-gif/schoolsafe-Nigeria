@@ -194,7 +194,7 @@ export const SupabaseModal: React.FC<SupabaseModalProps> = ({ isOpen, onClose })
                       )}
                     </div>
                     <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
-                      From: <code className="text-blue-700 dark:text-blue-400 font-mono">{serverStatus?.emailFrom || 'notifications@example.com (placeholder)'}</code>
+                      From: <code className="text-blue-700 dark:text-blue-400 font-mono">{serverStatus?.emailFrom || 'SchoolSafe Nigeria <notifications@schoolsafe.ng>'}</code>
                     </p>
                     <p className="text-[11px] text-slate-500 dark:text-slate-400">
                       Dispatches HTML formatted arrival & pickup email alerts.

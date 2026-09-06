@@ -64,7 +64,7 @@ app.get("/api/config/status", (req, res) => {
     termiiSenderId: process.env.TERMII_SENDER_ID || null,
     hasResendKey: !!process.env.RESEND_API_KEY,
     hasEmailFrom: !!process.env.EMAIL_FROM,
-    emailFrom: process.env.EMAIL_FROM || "notifications@example.com (placeholder)",
+    emailFrom: process.env.EMAIL_FROM || "SchoolSafe Nigeria <notifications@schoolsafe.ng>",
     hasSupabaseSecret: !!process.env.SUPABASE_SECRET_KEY,
     isDevelopment: process.env.NODE_ENV !== "production"
   });
@@ -167,7 +167,7 @@ app.post("/api/notifications/email", async (req, res) => {
   }
 
   const resendApiKey = process.env.RESEND_API_KEY;
-  const emailFrom = process.env.EMAIL_FROM || "SchoolSafe Nigeria <notifications@example.com>";
+  const emailFrom = process.env.EMAIL_FROM || "SchoolSafe Nigeria <notifications@schoolsafe.ng>";
 
   // If Resend key is not configured, simulate gracefully
   if (!resendApiKey) {
@@ -385,7 +385,7 @@ app.post("/api/notifications/dispatch", async (req, res) => {
     if (pref === "email_only" || pref === "email_and_sms") {
       if (parent.email) {
         const resendApiKey = process.env.RESEND_API_KEY;
-        const emailFrom = process.env.EMAIL_FROM || "SchoolSafe Nigeria <notifications@example.com>";
+        const emailFrom = process.env.EMAIL_FROM || "SchoolSafe Nigeria <notifications@schoolsafe.ng>";
         if (!resendApiKey) {
           results.push({
             parent_id: parent.id,
